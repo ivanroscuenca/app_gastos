@@ -38,6 +38,8 @@ class MyHomePage extends StatelessWidget {
   final titleController = TextEditingController();
   final amountController = TextEditingController();
 
+  MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,30 +62,30 @@ class MyHomePage extends StatelessWidget {
           Card(
             child: Container(
               padding: const EdgeInsets.all(10),
-              child: const Column(
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     TextField(
-                      decoration: InputDecoration(labelText: 'Title'),
+                      decoration: const InputDecoration(labelText: 'Title'),
                       controller: titleController,
                     ),
                     TextField(
-                      decoration: InputDecoration(labelText: 'Amount'),
+                      decoration: const InputDecoration(labelText: 'Amount'),
                       controller: amountController,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     TextButton(
                         onPressed: () {
                           print(titleController.text);
                         },
-                        style: ButtonStyle(
+                        style: const ButtonStyle(
                             backgroundColor:
                                 MaterialStatePropertyAll(Colors.red),
                             textStyle: MaterialStatePropertyAll(
                                 TextStyle(color: Colors.white))),
-                        child: Text('Add transaction'))
+                        child: const Text('Add transaction'))
                   ]),
             ),
           ),
